@@ -9,9 +9,9 @@
 	Assets/Chiku/Scripts/ButtonClickSound.cs	>> Button Click Sound (Attach any Button for click sound)
 
 
-Contact: 
+Contact-Details: 
 
-Name:		Chitrang Patel 
-Number: 	+91-8007796351
-E-mail: 	chitrang313@gmail.com
-website: 	https://app-chitrang.web.app/
+👉 Name:		Chitrang Patel 
+👉 Number: 	+91-8007796351
+👉 E-mail: 	chitrang313@gmail.com
+👉 website: 	https://app-chitrang.web.app/
