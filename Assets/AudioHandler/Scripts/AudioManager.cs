@@ -50,8 +50,7 @@ public class AudioManager : MonoBehaviour
     public class ButtonProperties
     {
         public string[] lables;
-        public Color[] colors;
-        public Sprite[] sprites;
+        public Color[] colors;        
     }
     public ButtonProperties buttonProperties = new ButtonProperties();
     public Tuple<string,Color,Sprite> getButtonStatus(AudioButtonType audioButtonType) {
@@ -63,14 +62,12 @@ public class AudioManager : MonoBehaviour
             case AudioButtonType.Music:
                 bool _isMusicOn = isMusicOn();
                 lable =AudioButtonType.Music + buttonProperties.lables[_isMusicOn ? 1 : 0];
-                color = buttonProperties.colors[_isMusicOn ? 1 : 0];
-                sprite = buttonProperties.sprites[_isMusicOn ? 1 : 0];
+                color = buttonProperties.colors[_isMusicOn ? 1 : 0];                
                 break;
             case AudioButtonType.SFX:
                 bool _isSfxOn = isSfxOn();
                 lable = AudioButtonType.SFX + buttonProperties.lables[_isSfxOn ? 1 : 0];
-                color = buttonProperties.colors[_isSfxOn ? 1 : 0];
-                sprite = buttonProperties.sprites[_isSfxOn ? 1 : 0];
+                color = buttonProperties.colors[_isSfxOn ? 1 : 0];                
                 break;
         }
         return new Tuple<string, Color, Sprite>(lable,color,sprite);

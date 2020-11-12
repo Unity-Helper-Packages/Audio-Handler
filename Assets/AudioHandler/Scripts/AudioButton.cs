@@ -9,8 +9,13 @@ public enum AudioButtonType {
 [RequireComponent(typeof(Button))]
 public class AudioButton : MonoBehaviour
 {
+    [Header("Select Audio Button Type")]
     public AudioButtonType AudioButtonType;
+
+    [Space]
+    public Sprite[] toggleSprites;
     
+    [Space]
     [SerializeField] private TextMeshProUGUI lable;
     [SerializeField] private Image colorImage;
     [SerializeField] private Image spriteImage;
@@ -39,6 +44,14 @@ public class AudioButton : MonoBehaviour
     void refreshButtonStatus() {
         lable.text = AudioManager.inst.getButtonStatus(AudioButtonType).Item1;
         colorImage.color = AudioManager.inst.getButtonStatus(AudioButtonType).Item2;
-        spriteImage.sprite = AudioManager.inst.getButtonStatus(AudioButtonType).Item3;        
+        switch (AudioButtonType)
+        {
+            case AudioButtonType.Music:
+                spriteImage.sprite = AudioManager.inst.isMusicOn() ? toggleSprites[1] : toggleSprites[0];
+                break;
+            case AudioButtonType.SFX:
+                spriteImage.sprite = AudioManager.inst.isSfxOn() ? toggleSprites[1] : toggleSprites[0];
+                break;
+         }
     }
 }//Class END.
